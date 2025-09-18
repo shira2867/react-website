@@ -1,9 +1,13 @@
 import { Footer } from "../footer/footer";
 import { Header } from "../header/header";
 import { Main } from "../main/main";
+import { Sidebar } from "../sidebar/sidebar";
 import './about.css'
 export function About() {
     return (
+        <div className="homePage">
+            <Header></Header>
+        <Sidebar></Sidebar>
         <main className="about-page">
             <section className="about-content" dir="rtl">
                 <p>
@@ -24,6 +28,7 @@ export function About() {
                 </p>
             </section>
         </main>
-
+        <Footer></Footer>
+</div>
     )
 }
