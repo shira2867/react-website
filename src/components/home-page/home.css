@@ -1,0 +1,187 @@
+/* --- Reset בסיסי --- */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* --- Grid עמוד הבית --- */
+.homePage {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-rows: 90px 1fr 60px;
+  grid-template-columns: 220px 1fr;
+  height: 100vh;
+  gap: 12px;
+}
+
+/* --- Header --- */
+.headerText {
+  grid-area: header;
+  background-color: #ffffff;
+  color: #111;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 90px;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+  padding: 25px 20px;
+  border-radius: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 170px;
+}
+
+.sidebar li {
+  margin: 18px 0;
+}
+
+.sidebar a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 35px;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #dd6229;
+}
+
+/* --- Main --- */
+main {
+  grid-area: main;
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.carItem {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+  padding: 20px;
+  text-align: center;
+  border: #111 solid 2px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.carItem h1 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  color: #111;
+}
+
+.carItem img {
+  max-width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.carItem img:hover {
+  transform: scale(1.03);
+}
+
+/* --- Footer --- */
+.footerText {
+  grid-area: footer;
+  background-color: #ffffff;
+  color: #555;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 60px;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/* --- רספונסיביות --- */
+@media (max-width: 992px) {
+  .sidebar a {
+    font-size: 24px;
+  }
+  .homePage {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .homePage {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .sidebar {
+    margin-top: 0;
+    padding: 15px;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .sidebar ul {
+    margin-top: 20px;
+  }
+
+  .sidebar a {
+    font-size: 10px;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  main {
+    padding: 15px;
+    justify-content: center;
+  }
+
+  .carItem {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerText {
+    font-size: 22px;
+    line-height: 60px;
+  }
+  .carItem h1 {
+    font-size: 18px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
+}

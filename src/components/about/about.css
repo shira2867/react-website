@@ -1,0 +1,29 @@
+
+.about-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5; /* רקע בהיר */
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-content h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.about-content p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.about-content p:first-child {
+  font-weight: 600;
+  color: #0077b6;
+}
